@@ -1,0 +1,11 @@
+[
+    {
+        "question": "What is the correct answer?",
+        "answers": [
+            {"text": "Correct", "isCorrect": true },
+            {"text": "No", "isCorrect": false},
+            {"text": "Nope", "isCorrect": false },
+            {"text": "Nu uh", "isCorrect": false }
+        ]
+    }
+]
