@@ -3,6 +3,7 @@ import Quiz from '../../client/src/components/Quiz'
 
 describe('<Quiz />', () => {
   beforeEach(() => {
+    // sets up a example question rather than actually making an API call to as server so we can run the test without a server running
     cy.intercept({
       method: "GET",
       url: "/api/questions/random"
@@ -15,11 +16,12 @@ describe('<Quiz />', () => {
   });
 
   it('renders', () => {
-    // see: https://on.cypress.io/mounting-react
+    // checks to ensure the component renders on the page
     cy.mount(<Quiz />)
   });
 
   it('mounts and displays the "start quiz" button', () => {
+    // mount the component, then check to make sure the button to start the quiz is visible
     cy.mount(<Quiz />);
 
     cy.get('button').contains('Start Quiz').should("be.visible");
@@ -27,6 +29,7 @@ describe('<Quiz />', () => {
 
 
   it('should display the first question when the "start quiz" button is clicked', () => {
+    // mounts the component, clicks the start quiz button, and ensures the first question is displayed on the page
     cy.mount(<Quiz />);
     cy.get('button').contains('Start Quiz').click();
 
@@ -34,6 +37,8 @@ describe('<Quiz />', () => {
   });
 
   it('shows a loading message when the array of question objects is empty', () => {
+    // first intercepts the API call with an empty questions array
+    // then it mounts the component, clicks the start quiz button, then checks to make sure the loading message is displayed
     cy.intercept({
       method: "GET",
       url: "/api/questions/random"

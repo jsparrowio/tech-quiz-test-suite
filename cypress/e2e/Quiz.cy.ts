@@ -1,5 +1,6 @@
 describe('Quiz e2e test', () => {
   beforeEach(() => {
+    // visit the theoretically running web application
     cy.visit('http://127.0.0.1:3000');
   });
 
@@ -15,13 +16,15 @@ describe('Quiz e2e test', () => {
   });
 
   it('should display my score when the quiz is completed', () => {
-
+    // checks to make sure the user can run through all questions and be presented with a score at the end
     cy.get('button').contains('Start Quiz').click();
 
-    for(let i=0; i<10; i++) {
+    // clicks through all of the questions
+    for (let i = 0; i < 10; i++) {
       cy.get('button').contains('1').click();
     }
 
+    // checks to make sure the score is visible
     cy.get(".alert-success").should("be.visible").and('contain', 'Your score');
 
   })
