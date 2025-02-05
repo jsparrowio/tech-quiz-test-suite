@@ -33,7 +33,7 @@ Download the source code for the project with a <code>git clone</code> on this r
   
 ## Usage
   
-To use, make sure you are CDed to the directory the source files live in. You can choose to either run the tests directly in the CLI/Terminal or in the Cypress GUI. If running an E2E test, make sure you run an <code>npm run start:dev</code> to start the server. Then, open a new terminal, and run either: <code>npm run test:e2e</code> to run an End to End test in the terminal, <code>npm run test:component</code> to run the component test in your terminal, or <code>npm run cypress</code> to open the Cypress GUI, and run the tests from there. If using the Cypress GUI, simply select which tests you would like to run, select the browser to run the tests in (Electron is most recommended), and then selec the "Quiz" option to run the tests.
+To use, make sure you are CDed to the directory the source files live in. You can choose to either run the tests directly in the CLI/Terminal or in the Cypress GUI. If running an E2E test, make sure you run an <code>npm run start:dev</code> to start the server. Then, open a new terminal, and run either: <code>npm run test</code> to run both the End to End and Component tests in the terminal, or <code>npm run cypress</code> to open the Cypress GUI, and run the tests from there. If using the Cypress GUI, simply select which tests you would like to run, select the browser to run the tests in (Electron is most recommended), and then selec the "Quiz" option to run the tests.
 
 The End to End test will check for:\
 "should start the quiz when the button is clicked"\
@@ -45,7 +45,7 @@ The component test will test for:\
 "should display the first question when the "start quiz" button is clicked"\
 "shows a loading message when the array of question objects is empty"
 
-If further instruction is needed, please view walkthrough video: [here]()
+If further instruction is needed, please view walkthrough video: [here](https://drive.google.com/file/d/1L7Z72bu4Sxf44TJhEs3dadR9wFO6yoOh/view)
 
 ## License
 
